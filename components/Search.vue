@@ -28,10 +28,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.search {
-  widows: 300px;
-  padding-top: 10px;
-  margin-left: 30px;
-}
-</style>
+<style scoped lang="scss"></style>

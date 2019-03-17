@@ -1,6 +1,5 @@
 <template>
   <div class="results">
-    <h2 class="results__heading">Search Results</h2>
     <ul class="results__lists">
       <li
         v-for="(item, index) in items"
