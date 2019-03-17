@@ -3,7 +3,7 @@
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
         <Loading />
-        <Lists />
+        <Results />
       </div>
     </v-flex>
   </v-layout>
@@ -11,12 +11,12 @@
 
 <script>
 import Loading from '~/components/Loading.vue'
-import Lists from '~/components/Lists.vue'
+import Results from '~/components/Results.vue'
 
 export default {
   components: {
     Loading,
-    Lists
+    Results
   }
 }
 </script>

@@ -1,11 +1,12 @@
 <template>
-  <div class="c-search">
+  <div class="search">
     <v-text-field
       v-model="keyword"
       label="Search for a movie ..."
       prepend-icon="search"
-      class="c-search__input"
+      class="search__input"
       autofocus
+      clearable
       @keyup.enter="getData"
     />
   </div>
@@ -28,8 +29,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.c-search {
+.search {
   widows: 300px;
+  padding-top: 10px;
   margin-left: 30px;
 }
 </style>

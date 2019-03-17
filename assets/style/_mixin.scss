@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+// -----------------------------------------------------------------
+// breakpoints設定
+// -----------------------------------------------------------------
+
+$breakpoints: (
+  pc: 'only screen and (min-width: 992px)',
+  sp: 'only screen and (max-width: 991px)',
+  tablet: 'only screen and (min-width: 768px) and (max-width: 991px)'
+);
+
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
