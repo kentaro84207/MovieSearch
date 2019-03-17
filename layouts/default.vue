@@ -63,6 +63,11 @@ export default {
           icon: 'bubble_chart',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'thumb_up_alt',
+          title: 'Popular',
+          to: '/popular'
         }
       ],
       miniVariant: false,
