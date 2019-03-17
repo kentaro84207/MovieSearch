@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <input
+  <div class="c-search">
+    <v-text-field
       v-model="keyword"
-      type="text"
-      class="search"
+      label="Search for a movie ..."
+      prepend-icon="search"
+      class="c-search__input"
       autofocus
       @keyup.enter="getData"
     />
@@ -25,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.c-search {
+  widows: 300px;
+  margin-left: 30px;
+}
+</style>

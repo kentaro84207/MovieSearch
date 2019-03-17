@@ -27,6 +27,7 @@
     <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+      <Search />
       <v-spacer />
     </v-toolbar>
     <v-content>
@@ -41,11 +42,16 @@
 </template>
 
 <script>
+import Search from '~/components/Search.vue'
+
 export default {
+  components: {
+    Search
+  },
   data() {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
       items: [
         {
@@ -60,9 +66,7 @@ export default {
         }
       ],
       miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'MovieSearch'
     }
   }
 }

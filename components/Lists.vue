@@ -16,11 +16,6 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     imgUrl:
-  //   }
-  // },
   computed: {
     items() {
       return this.$store.state.items.results
