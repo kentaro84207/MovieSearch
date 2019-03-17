@@ -44,7 +44,7 @@
 export default {
   data() {
     return {
-      clipped: false,
+      clipped: true,
       drawer: true,
       fixed: false,
       items: [
@@ -52,11 +52,6 @@ export default {
           icon: 'apps',
           title: 'Welcome',
           to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
         },
         {
           icon: 'thumb_up_alt',
