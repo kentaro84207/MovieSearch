@@ -1,6 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
+      <h2 class="heading">Popular Movies</h2>
       <div v-if="isLoading">
         LOADING...
         <font-awesome-icon class="loader" icon="spinner" />
@@ -23,6 +24,9 @@ export default {
     isLoading() {
       return this.$store.state.loadingNow
     }
+  },
+  created: function() {
+    this.$store.dispatch('getPopular')
   }
 }
 </script>
@@ -32,7 +36,6 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 .loader {
   animation: load 1s linear infinite;
 }

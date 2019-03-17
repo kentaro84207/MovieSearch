@@ -62,6 +62,9 @@ export default {
       miniVariant: false,
       title: 'MovieSearch'
     }
+  },
+  created: function() {
+    this.$store.dispatch('getPopular')
   }
 }
 </script>
