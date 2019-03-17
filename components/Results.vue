@@ -48,6 +48,7 @@ export default {
   &__image {
     width: 100%;
     height: 450px;
+    overflow: hidden;
     img {
       width: 100%;
     }
