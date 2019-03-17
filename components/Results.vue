@@ -45,13 +45,13 @@ export default {
     flex-wrap: wrap;
   }
   &__list {
-    width: 300px;
+    width: 200px;
     margin-right: 20px;
     margin-bottom: 50px;
   }
   &__image {
     width: 100%;
-    height: 450px;
+    height: 300px;
     overflow: hidden;
     img {
       width: 100%;
