@@ -8,9 +8,14 @@
         class="results__list"
       >
         <figure class="results__image">
-          <img
-            :src="'https://image.tmdb.org/t/p/original' + item.poster_path"
-          />
+          <div v-if="item.poster_path !== null">
+            <img
+              :src="'https://image.tmdb.org/t/p/original' + item.poster_path"
+            />
+          </div>
+          <div v-else>
+            <img src="~/static/noImage.jpg" />
+          </div>
         </figure>
 
         <h3 class="results__title">{{ item.title }}</h3>
@@ -53,6 +58,7 @@ export default {
     }
   }
   &__title {
+    text-align: center;
     margin-top: 20px;
   }
 }
