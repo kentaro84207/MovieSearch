@@ -1,3 +1,11 @@
-@import '~assets/style/_reset.scss';
-@import '~assets/style/_resetVuetify.scss';
-@import '~assets/style/_mixin.scss';
+// -----------------------------------------------------------------
+// foundation
+// -----------------------------------------------------------------
+@import '~assets/style/foundation/_reset.scss';
+@import '~assets/style/foundation/_resetVuetify.scss';
+@import '~assets/style/foundation/_mixin.scss';
+
+// -----------------------------------------------------------------
+// object
+// -----------------------------------------------------------------
+@import '~assets/style/object/_heading.scss';
