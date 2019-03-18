@@ -60,11 +60,20 @@ export default {
         }
       ],
       miniVariant: false,
-      title: 'MovieSearch'
+      title: 'MovieSearch',
+      addUrl: 'movie/popular',
+      params: {
+        api_key: process.env.API_KEY,
+        language: 'ja-JP',
+        page: 1
+      }
     }
   },
   created: function() {
-    this.$store.dispatch('getPopular')
+    this.$store.dispatch('getData', {
+      addUrl: this.addUrl,
+      params: this.params
+    })
   }
 }
 </script>

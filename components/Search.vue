@@ -16,13 +16,22 @@
 export default {
   data() {
     return {
-      keyword: ''
+      keyword: '',
+      addUrl: 'search/movie',
+      params: {
+        api_key: process.env.API_KEY,
+        language: 'ja-JP',
+        query: this.keyword
+      }
     }
   },
   methods: {
     getData() {
       if (this.keyword === '') return
-      this.$store.dispatch('getData', this.keyword)
+      this.$store.dispatch('getData', {
+        addUrl: this.addUrl,
+        params: this.params
+      })
     }
   }
 }

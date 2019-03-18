@@ -88,5 +88,9 @@ export default {
         })
       }
     }
+  },
+
+  env: {
+    API_KEY: 'ce191f672c06d990e9d4f40521ad4372'
   }
 }

@@ -20,13 +20,26 @@ export default {
   components: {
     Results
   },
+  data() {
+    return {
+      addUrl: 'movie/popular',
+      params: {
+        api_key: process.env.API_KEY,
+        language: 'ja-JP',
+        page: 1
+      }
+    }
+  },
   computed: {
     isLoading() {
       return this.$store.state.loadingNow
     }
   },
   created: function() {
-    this.$store.dispatch('getPopular')
+    this.$store.dispatch('getData', {
+      addUrl: this.addUrl,
+      params: this.params
+    })
   }
 }
 </script>
