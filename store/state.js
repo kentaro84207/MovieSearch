@@ -1,4 +1,5 @@
 export default {
   items: [],
-  loadingNow: false
+  loadingNow: false,
+  dialog: false
 }

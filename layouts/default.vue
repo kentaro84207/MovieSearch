@@ -32,6 +32,7 @@
     <v-content>
       <v-container>
         <nuxt />
+        <Modal />
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
@@ -41,7 +42,12 @@
 </template>
 
 <script>
+import Modal from '~/components/Modal.vue'
+
 export default {
+  components: {
+    Modal
+  },
   data() {
     return {
       clipped: true,

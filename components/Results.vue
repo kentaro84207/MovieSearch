@@ -6,6 +6,7 @@
         v-cloak
         :key="index"
         class="results__list"
+        @click="changeDialog()"
       >
         <figure class="results__image">
           <div v-if="item.poster_path !== null">
@@ -29,6 +30,20 @@ export default {
   computed: {
     items() {
       return this.$store.state.items.results
+    }
+  },
+  methods: {
+    changeDialog() {
+      this.$store.dispatch('changeDialog')
+      this.overlay()
+    },
+    overlay() {
+      setTimeout(() => {
+        const _overlay = document.querySelector('.v-overlay')
+        _overlay.addEventListener('click', () => {
+          this.changeDialog()
+        })
+      }, 500)
     }
   }
 }

@@ -4,5 +4,8 @@ export default {
   },
   changeloadingState(state) {
     state.loadingNow = !state.loadingNow
+  },
+  changeDialogState(state) {
+    state.dialog = !state.dialog
   }
 }

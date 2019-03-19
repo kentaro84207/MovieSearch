@@ -18,5 +18,8 @@ export default {
       .then(function() {
         commit('changeloadingState')
       })
+  },
+  changeDialog({ commit }) {
+    commit('changeDialogState')
   }
 }
