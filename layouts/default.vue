@@ -70,7 +70,7 @@ export default {
       addUrl: 'movie/popular',
       params: {
         api_key: process.env.API_KEY,
-        language: 'ja-JP',
+        language: 'en-US',
         page: 1
       }
     }

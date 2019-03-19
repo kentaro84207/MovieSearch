@@ -20,7 +20,7 @@ export default {
       addUrl: 'search/movie',
       params: {
         api_key: process.env.API_KEY,
-        language: 'ja-JP',
+        language: 'en-US',
         query: this.keyword
       }
     }

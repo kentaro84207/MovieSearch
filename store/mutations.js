@@ -7,5 +7,8 @@ export default {
   },
   changeDialogState(state) {
     state.dialog = !state.dialog
+  },
+  itemNumState(state, itemNum) {
+    state.itemNum = itemNum
   }
 }

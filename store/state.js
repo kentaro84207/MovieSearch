@@ -1,5 +1,6 @@
 export default {
   items: [],
   loadingNow: false,
-  dialog: false
+  dialog: false,
+  itemNum: ''
 }

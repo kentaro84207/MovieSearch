@@ -21,5 +21,8 @@ export default {
   },
   changeDialog({ commit }) {
     commit('changeDialogState')
+  },
+  changeItemNum({ commit }, payload) {
+    commit('itemNumState', payload.itemNum)
   }
 }
