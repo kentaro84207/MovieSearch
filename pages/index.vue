@@ -1,15 +1,13 @@
 <template>
   <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div v-if="isLoading">
-        LOADING...
-        <font-awesome-icon class="loader" icon="spinner" />
-      </div>
-      <div v-else>
-        <Search />
-        <Results />
-      </div>
-    </v-flex>
+    <div v-if="isLoading">
+      LOADING...
+      <font-awesome-icon class="loader" icon="spinner" />
+    </div>
+    <div v-else class="contents">
+      <Search />
+      <Results />
+    </div>
   </v-layout>
 </template>
 
@@ -44,5 +42,10 @@ export default {
   width: 300px;
   padding-top: 10px;
   margin: 0 auto 30px;
+}
+
+.contents,
+.results {
+  width: 100%;
 }
 </style>

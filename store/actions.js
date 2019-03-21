@@ -5,7 +5,9 @@ const BASE_URL = 'https://api.themoviedb.org/3/'
 export default {
   getData({ commit }, payload) {
     commit('changeloadingState')
+    console.log(payload)
     axios
+
       .get(BASE_URL + payload.addUrl, {
         params: payload.params
       })

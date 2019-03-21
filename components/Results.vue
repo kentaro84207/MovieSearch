@@ -55,18 +55,22 @@ export default {
 </script>
 <style scoped lang="scss">
 .results {
+  width: 100%;
   &__heading {
     margin-bottom: 30px;
   }
   &__lists {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
+    // display: grid;
+    // gap: 10px;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    cursor: pointer;
   }
   &__list {
     width: 200px;
-    margin-right: 20px;
     margin-bottom: 50px;
   }
   &__image {
@@ -78,7 +82,6 @@ export default {
     }
   }
   &__title {
-    text-align: center;
     margin-top: 20px;
   }
 }

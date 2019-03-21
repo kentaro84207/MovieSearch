@@ -1,15 +1,13 @@
 <template>
   <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <h2 class="heading">Popular Movies</h2>
-      <div v-if="isLoading">
-        LOADING...
-        <font-awesome-icon class="loader" icon="spinner" />
-      </div>
-      <div v-else>
-        <Results />
-      </div>
-    </v-flex>
+    <h2 class="heading">Popular Movies</h2>
+    <div v-if="isLoading">
+      LOADING...
+      <font-awesome-icon class="loader" icon="spinner" />
+    </div>
+    <div v-else class="contents">
+      <Results />
+    </div>
   </v-layout>
 </template>
 
@@ -22,12 +20,7 @@ export default {
   },
   data() {
     return {
-      addUrl: 'movie/popular',
-      params: {
-        api_key: process.env.API_KEY,
-        language: 'en-US',
-        page: 1
-      }
+      addUrl: 'movie/popular'
     }
   },
   computed: {
@@ -36,9 +29,14 @@ export default {
     }
   },
   created: function() {
+    const params = {
+      api_key: process.env.API_KEY,
+      language: 'ja-JP',
+      page: 1
+    }
     this.$store.dispatch('getData', {
       addUrl: this.addUrl,
-      params: this.params
+      params: params
     })
   }
 }
@@ -51,5 +49,10 @@ export default {
 }
 .loader {
   animation: load 1s linear infinite;
+}
+
+.contents,
+.results {
+  width: 100%;
 }
 </style>

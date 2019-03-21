@@ -17,20 +17,20 @@ export default {
   data() {
     return {
       keyword: '',
-      addUrl: 'search/movie',
-      params: {
-        api_key: process.env.API_KEY,
-        language: 'en-US',
-        query: this.keyword
-      }
+      addUrl: 'search/movie'
     }
   },
   methods: {
     getData() {
       if (this.keyword === '') return
+      const params = {
+        api_key: process.env.API_KEY,
+        language: 'ja-JP',
+        query: this.keyword
+      }
       this.$store.dispatch('getData', {
         addUrl: this.addUrl,
-        params: this.params
+        params: params
       })
     }
   }
