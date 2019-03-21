@@ -25,7 +25,7 @@ export default {
       if (this.keyword === '') return
       const params = {
         api_key: process.env.API_KEY,
-        language: 'ja-JP',
+        language: 'en-US',
         query: this.keyword
       }
       this.$store.dispatch('getData', {

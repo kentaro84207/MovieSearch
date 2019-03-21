@@ -31,7 +31,7 @@ export default {
   created: function() {
     const params = {
       api_key: process.env.API_KEY,
-      language: 'ja-JP',
+      language: 'en-US',
       page: 1
     }
     this.$store.dispatch('getData', {
