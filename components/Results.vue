@@ -61,6 +61,7 @@ export default {
   }
   &__lists {
     width: 100%;
+    padding: 0 50px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -70,19 +71,26 @@ export default {
     cursor: pointer;
   }
   &__list {
-    width: 200px;
+    width: 18vw;
     margin-bottom: 50px;
+    &:hover {
+      img {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
+    }
   }
   &__image {
     width: 100%;
-    height: 300px;
+    height: 27vw;
     overflow: hidden;
     img {
       width: 100%;
+      transition: all 0.6s ease-out;
     }
   }
   &__title {
-    margin-top: 20px;
+    margin-top: 1vw;
   }
 }
 </style>

@@ -30,10 +30,8 @@
       <v-spacer />
     </v-toolbar>
     <v-content>
-      <v-container>
-        <nuxt />
-        <Modal />
-      </v-container>
+      <nuxt />
+      <Modal />
     </v-content>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019</span>
