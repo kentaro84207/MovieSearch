@@ -62,16 +62,16 @@ export default {
   &__lists {
     width: 100%;
     padding: 0 50px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    // display: grid;
-    // gap: 10px;
-    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     cursor: pointer;
   }
   &__list {
-    width: 18vw;
+    width: 200px;
     margin-bottom: 50px;
     &:hover {
       img {
@@ -82,7 +82,7 @@ export default {
   }
   &__image {
     width: 100%;
-    height: 27vw;
+    height: 300px;
     overflow: hidden;
     img {
       width: 100%;
@@ -90,7 +90,7 @@ export default {
     }
   }
   &__title {
-    margin-top: 1vw;
+    margin-top: 20px;
   }
 }
 </style>
