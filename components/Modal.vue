@@ -24,7 +24,7 @@
               half-increments
             ></v-rating>
             <dl class="modal__title-date">
-              <dt>公開日</dt>
+              <dt>Release date</dt>
               <dd>{{ items[itemNum].release_date }}</dd>
             </dl>
           </div>
