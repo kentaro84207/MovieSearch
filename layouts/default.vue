@@ -66,6 +66,11 @@ export default {
           icon: 'star',
           title: 'Top Rated',
           to: '/top_rated'
+        },
+        {
+          icon: 'play_arrow',
+          title: 'Now Playing',
+          to: '/now_playing'
         }
       ],
       miniVariant: false,
