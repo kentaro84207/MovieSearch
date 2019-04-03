@@ -61,6 +61,11 @@ export default {
           icon: 'thumb_up_alt',
           title: 'Popular',
           to: '/popular'
+        },
+        {
+          icon: 'star',
+          title: 'Top Rated',
+          to: '/top_rated'
         }
       ],
       miniVariant: false,
