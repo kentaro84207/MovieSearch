@@ -2,5 +2,6 @@ export default {
   items: [],
   loadingNow: false,
   dialog: false,
-  itemNum: ''
+  itemNum: '',
+  currentPage: 1
 }

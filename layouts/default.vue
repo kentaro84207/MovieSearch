@@ -47,6 +47,7 @@ import Search from '~/components/Search.vue'
 import Modal from '~/components/Modal.vue'
 
 export default {
+  middleware: 'resetPage',
   components: {
     Search,
     Modal

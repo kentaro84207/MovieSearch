@@ -7,16 +7,19 @@
     </div>
     <div v-else class="contents">
       <Results />
+      <LoadMore @callLoadMore="loadMore" />
     </div>
   </v-layout>
 </template>
 
 <script>
 import Results from '~/components/Results.vue'
+import LoadMore from '~/components/LoadMore.vue'
 
 export default {
   components: {
-    Results
+    Results,
+    LoadMore
   },
   data() {
     return {
@@ -32,12 +35,25 @@ export default {
     const params = {
       api_key: process.env.API_KEY,
       language: 'en-US',
-      page: 1
+      page: this.$store.state.currentPage
     }
     this.$store.dispatch('getData', {
       addUrl: this.addUrl,
       params: params
     })
+  },
+  methods: {
+    loadMore() {
+      const params = {
+        api_key: process.env.API_KEY,
+        language: 'en-US',
+        page: this.$store.state.currentPage
+      }
+      this.$store.dispatch('addData', {
+        addUrl: this.addUrl,
+        params: params
+      })
+    }
   }
 }
 </script>

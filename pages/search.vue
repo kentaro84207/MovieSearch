@@ -1,6 +1,9 @@
 <template>
   <v-layout column justify-center align-center>
-    <h2 class="heading">Search Results</h2>
+    <h2 class="heading">
+      Search Results
+      <span class="heading__number">({{ totalNumber }} results)</span>
+    </h2>
     <div v-if="isLoading">
       LOADING...
       <font-awesome-icon class="loader" icon="spinner" />
@@ -17,6 +20,14 @@ import Results from '~/components/Results.vue'
 export default {
   components: {
     Results
+  },
+  computed: {
+    isLoading() {
+      return this.$store.state.loadingNow
+    },
+    totalNumber() {
+      return this.$store.state.items.total_results
+    }
   }
 }
 </script>
@@ -33,5 +44,8 @@ export default {
 .contents,
 .results {
   width: 100%;
+}
+
+.results__number {
 }
 </style>
