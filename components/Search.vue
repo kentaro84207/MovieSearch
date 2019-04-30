@@ -32,6 +32,7 @@ export default {
         addUrl: this.addUrl,
         params: params
       })
+      this.$router.push('search')
     }
   }
 }
