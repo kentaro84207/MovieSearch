@@ -39,7 +39,7 @@ export default {
 
 <style scoped lang="scss">
 .search__input {
-  padding-top: 16px;
+  padding-top: 20px;
   padding-left: 20px;
 }
 </style>
