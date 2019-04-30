@@ -27,6 +27,7 @@
     <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+      <Search />
       <v-spacer />
     </v-toolbar>
     <v-content>
@@ -40,10 +41,12 @@
 </template>
 
 <script>
+import Search from '~/components/Search.vue'
 import Modal from '~/components/Modal.vue'
 
 export default {
   components: {
+    Search,
     Modal
   },
   data() {
@@ -53,14 +56,9 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
           icon: 'thumb_up_alt',
           title: 'Popular',
-          to: '/popular'
+          to: '/'
         },
         {
           icon: 'star',

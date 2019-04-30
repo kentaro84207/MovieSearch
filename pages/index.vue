@@ -1,11 +1,11 @@
 <template>
   <v-layout column justify-center align-center>
+    <h2 class="heading">Popular Movies</h2>
     <div v-if="isLoading">
       LOADING...
       <font-awesome-icon class="loader" icon="spinner" />
     </div>
     <div v-else class="contents">
-      <Search />
       <Results />
     </div>
   </v-layout>
@@ -13,17 +13,31 @@
 
 <script>
 import Results from '~/components/Results.vue'
-import Search from '~/components/Search.vue'
 
 export default {
   components: {
-    Results,
-    Search
+    Results
+  },
+  data() {
+    return {
+      addUrl: 'movie/popular'
+    }
   },
   computed: {
     isLoading() {
       return this.$store.state.loadingNow
     }
+  },
+  created: function() {
+    const params = {
+      api_key: process.env.API_KEY,
+      language: 'en-US',
+      page: 1
+    }
+    this.$store.dispatch('getData', {
+      addUrl: this.addUrl,
+      params: params
+    })
   }
 }
 </script>
@@ -33,15 +47,8 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 .loader {
   animation: load 1s linear infinite;
-}
-
-.search {
-  width: 300px;
-  padding-top: 10px;
-  margin: 0 auto 30px;
 }
 
 .contents,
