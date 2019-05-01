@@ -1,12 +1,15 @@
 <template>
-  <div @click="loadMore">Load More</div>
+  <div v-if="showLoadMore" @click="loadMore">Load More</div>
 </template>
 
 <script>
 export default {
   computed: {
-    currentPage() {
-      return this.$store.state.currentPage
+    showLoadMore() {
+      return (
+        this.$store.state.items.total_results >
+        this.$store.state.currentPage * 20
+      )
     }
   },
   methods: {

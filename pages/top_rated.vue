@@ -7,20 +7,28 @@
     </div>
     <div v-else class="contents">
       <Results />
+      <LoadMore @callLoadMore="addData" />
     </div>
   </v-layout>
 </template>
 
 <script>
 import Results from '~/components/Results.vue'
+import LoadMore from '~/components/LoadMore.vue'
 
 export default {
   components: {
-    Results
+    Results,
+    LoadMore
   },
   data() {
     return {
-      addUrl: 'movie/top_rated'
+      addUrl: 'movie/top_rated',
+      params: {
+        api_key: process.env.API_KEY,
+        language: 'en-US',
+        page: this.$store.state.currentPage
+      }
     }
   },
   computed: {
@@ -29,15 +37,18 @@ export default {
     }
   },
   created: function() {
-    const params = {
-      api_key: process.env.API_KEY,
-      language: 'en-US',
-      page: 1
-    }
     this.$store.dispatch('getData', {
       addUrl: this.addUrl,
-      params: params
+      params: this.params
     })
+  },
+  methods: {
+    addData() {
+      this.$store.dispatch('addData', {
+        addUrl: this.addUrl,
+        params: this.params
+      })
+    }
   }
 }
 </script>
