@@ -15,7 +15,7 @@ export default {
   methods: {
     loadMore() {
       this.$store.dispatch('addPage')
-      this.$emit('callLoadMore')
+      this.$store.dispatch('addData')
     }
   }
 }

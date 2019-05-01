@@ -35,7 +35,7 @@ export default {
   methods: {
     addData() {
       this.$store.dispatch('addData', {
-        addUrl: this.addUrl,
+        url: this.url,
         params: this.params
       })
     }

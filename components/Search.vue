@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      addUrl: 'search/movie',
+      url: 'search/movie',
       params: {
         api_key: process.env.API_KEY,
         language: 'en-US',
@@ -27,17 +27,10 @@ export default {
   methods: {
     getData() {
       if (this.params.query === '') return
-      this.$store.dispatch('getData', {
-        addUrl: this.addUrl,
-        params: this.params
-      })
+      this.$store.dispatch('changeParams', this.params)
+      this.$store.dispatch('changeUrl', this.url)
+      this.$store.dispatch('getData')
       this.$router.push('search')
-    },
-    addDate() {
-      this.$store.dispatch('addData', {
-        addUrl: this.addUrl,
-        params: this.params
-      })
     }
   }
 }

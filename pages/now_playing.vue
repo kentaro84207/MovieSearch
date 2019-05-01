@@ -7,7 +7,7 @@
     </div>
     <div v-else class="contents">
       <Results />
-      <LoadMore @callLoadMore="addData" />
+      <LoadMore />
     </div>
   </v-layout>
 </template>
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      addUrl: 'movie/now_playing',
+      url: 'movie/now_playing',
       params: {
         api_key: process.env.API_KEY,
         language: 'en-US',
@@ -37,18 +37,9 @@ export default {
     }
   },
   created: function() {
-    this.$store.dispatch('getData', {
-      addUrl: this.addUrl,
-      params: this.params
-    })
-  },
-  methods: {
-    addData() {
-      this.$store.dispatch('addData', {
-        addUrl: this.addUrl,
-        params: this.params
-      })
-    }
+    this.$store.dispatch('changeParams', this.params)
+    this.$store.dispatch('changeUrl', this.url)
+    this.$store.dispatch('getData')
   }
 }
 </script>
