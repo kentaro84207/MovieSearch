@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <v-text-field
-      v-model="keyword"
+      v-model="params.query"
       label="Search for a movie ..."
       prepend-icon="search"
       class="search__input"
@@ -16,22 +16,20 @@
 export default {
   data() {
     return {
-      keyword: '',
-      addUrl: 'search/movie'
+      url: 'search/movie',
+      params: {
+        api_key: process.env.API_KEY,
+        language: 'en-US',
+        query: ''
+      }
     }
   },
   methods: {
     getData() {
-      if (this.keyword === '') return
-      const params = {
-        api_key: process.env.API_KEY,
-        language: 'en-US',
-        query: this.keyword
-      }
-      this.$store.dispatch('getData', {
-        addUrl: this.addUrl,
-        params: params
-      })
+      if (this.params.query === '') return
+      this.$store.dispatch('changeParams', this.params)
+      this.$store.dispatch('changeUrl', this.url)
+      this.$store.dispatch('getData')
       this.$router.push('search')
     }
   }

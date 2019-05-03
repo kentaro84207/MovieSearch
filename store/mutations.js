@@ -3,8 +3,13 @@ export default {
     state.items = items
   },
   addItems(state, items) {
-    console.log(state.items)
     state.items.results = state.items.results.concat(items.results)
+  },
+  changeUrl(state, url) {
+    state.url = url
+  },
+  changeParams(state, params) {
+    state.params = params
   },
   changeloadingState(state) {
     state.loadingNow = !state.loadingNow

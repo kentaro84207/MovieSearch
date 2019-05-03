@@ -76,19 +76,8 @@ export default {
       ],
       miniVariant: false,
       title: 'MovieSearch',
-      addUrl: 'movie/popular'
+      url: 'movie/popular'
     }
-  },
-  created: function() {
-    const params = {
-      api_key: process.env.API_KEY,
-      language: 'en-US',
-      page: 1
-    }
-    this.$store.dispatch('getData', {
-      addUrl: this.addUrl,
-      params: params
-    })
   }
 }
 </script>

@@ -1,26 +1,30 @@
 <template>
-  <div @click="loadMore">Load More</div>
+  <div class="loadMore">
+    <div v-if="showLoadMore" class="btn" @click="loadMore">Load More</div>
+  </div>
 </template>
 
 <script>
 export default {
   computed: {
-    currentPage() {
-      return this.$store.state.currentPage
+    showLoadMore() {
+      return (
+        this.$store.state.items.total_results >
+        this.$store.state.currentPage * 20
+      )
     }
   },
   methods: {
     loadMore() {
       this.$store.dispatch('addPage')
-      this.$emit('callLoadMore')
+      this.$store.dispatch('addData')
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.search__input {
-  padding-top: 20px;
-  padding-left: 20px;
+.loadMore {
+  margin-bottom: 50px;
 }
 </style>
