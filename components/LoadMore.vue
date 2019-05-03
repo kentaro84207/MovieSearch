@@ -1,5 +1,7 @@
 <template>
-  <div v-if="showLoadMore" @click="loadMore">Load More</div>
+  <div class="loadMore">
+    <div v-if="showLoadMore" class="btn" @click="loadMore">Load More</div>
+  </div>
 </template>
 
 <script>
@@ -22,8 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.search__input {
-  padding-top: 20px;
-  padding-left: 20px;
+.loadMore {
+  margin-bottom: 50px;
 }
 </style>
