@@ -31,14 +31,14 @@
       </nuxt-link>
       <Search />
       <v-spacer />
+      <figure class="nav__figure">
+        <img class="nav__image" src="logo.png" alt="THE MOVIE DB" />
+      </figure>
     </v-toolbar>
     <v-content>
       <nuxt />
       <Modal />
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -81,4 +81,13 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.nav__figure {
+  width: 100px;
+  padding-top: 10px;
+}
+
+.nav__image {
+  width: 100%;
+}
+</style>
