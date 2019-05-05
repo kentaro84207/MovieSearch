@@ -43,18 +43,4 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
-@keyframes load {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.loader {
-  animation: load 1s linear infinite;
-}
-
-.contents,
-.results {
-  width: 100%;
-}
-</style>
+<style scoped lang="scss"></style>

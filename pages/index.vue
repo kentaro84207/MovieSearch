@@ -45,27 +45,4 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
-@keyframes load {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.loader {
-  animation: load 1s linear infinite;
-}
-
-.contents,
-.results {
-  width: 100%;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style scoped lang="scss"></style>
