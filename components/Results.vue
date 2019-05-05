@@ -8,17 +8,12 @@
         class="results__list"
         @click="changeDialog(), getItemNum(index)"
       >
-        <figure class="results__image">
-          <div v-if="item.poster_path !== null">
-            <img
-              :src="'https://image.tmdb.org/t/p/original' + item.poster_path"
-            />
-          </div>
-          <div v-else>
-            <img src="~/static/noImage.jpg" />
-          </div>
+        <figure v-if="item.poster_path !== null" class="results__image">
+          <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" />
         </figure>
-
+        <figure v-else>
+          <img src="~/static/noImage.jpg" />
+        </figure>
         <h3 class="results__title">{{ item.title }}</h3>
       </li>
     </ul>
@@ -62,17 +57,17 @@ export default {
   &__lists {
     width: 100%;
     padding: 0 50px;
-    // display: flex;
-    // justify-content: space-between;
-    // flex-wrap: wrap;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     cursor: pointer;
   }
   &__list {
-    width: 200px;
+    width: 22%;
     margin-bottom: 50px;
+    &:not(:nth-of-type(4n)) {
+      margin-right: 4%;
+    }
     &:hover {
       img {
         opacity: 0.6;
@@ -82,10 +77,11 @@ export default {
   }
   &__image {
     width: 100%;
-    height: 300px;
+    height: 24vw;
     overflow: hidden;
     img {
       width: 100%;
+      height: 100%;
       transition: all 0.6s ease-out;
     }
   }
