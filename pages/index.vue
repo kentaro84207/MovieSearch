@@ -1,27 +1,16 @@
 <template>
   <v-layout column justify-center align-center>
     <h2 class="heading">Popular Movies</h2>
-    <transition name="fade" mode="out-in">
-      <div v-if="isLoading" key="loading">
-        LOADING...
-        <font-awesome-icon class="loader" icon="spinner" />
-      </div>
-      <div v-else key="loaded" class="contents">
-        <Results />
-        <LoadMore />
-      </div>
-    </transition>
+    <Contents />
   </v-layout>
 </template>
 
 <script>
-import Results from '~/components/Results.vue'
-import LoadMore from '~/components/LoadMore.vue'
+import Contents from '~/components/Contents.vue'
 
 export default {
   components: {
-    Results,
-    LoadMore
+    Contents
   },
   data() {
     return {
@@ -31,11 +20,6 @@ export default {
         language: 'en-US',
         page: this.$store.state.currentPage
       }
-    }
-  },
-  computed: {
-    isLoading() {
-      return this.$store.state.loadingNow
     }
   },
   created: function() {

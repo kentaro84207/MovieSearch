@@ -4,40 +4,20 @@
       Search Results
       <span class="heading__number">({{ totalNumber }} results)</span>
     </h2>
-    <div v-if="isLoading">
-      LOADING...
-      <font-awesome-icon class="loader" icon="spinner" />
-    </div>
-    <div v-else class="contents">
-      <Results />
-      <LoadMore @callLoadMore="addData" />
-    </div>
+    <Contents />
   </v-layout>
 </template>
 
 <script>
-import Results from '~/components/Results.vue'
-import LoadMore from '~/components/LoadMore.vue'
+import Contents from '~/components/Contents.vue'
 
 export default {
   components: {
-    Results,
-    LoadMore
+    Contents
   },
   computed: {
-    isLoading() {
-      return this.$store.state.loadingNow
-    },
     totalNumber() {
       return this.$store.state.items.total_results
-    }
-  },
-  methods: {
-    addData() {
-      this.$store.dispatch('addData', {
-        url: this.url,
-        params: this.params
-      })
     }
   }
 }
