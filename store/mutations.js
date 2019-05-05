@@ -22,8 +22,10 @@ export default {
   },
   addPageState(state) {
     state.currentPage++
+    state.params.page = state.currentPage
   },
   resetPageState(state) {
     state.currentPage = 1
+    state.params.page = state.currentPage
   }
 }
