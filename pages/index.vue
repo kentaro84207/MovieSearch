@@ -1,14 +1,16 @@
 <template>
   <v-layout column justify-center align-center>
     <h2 class="heading">Popular Movies</h2>
-    <div v-if="isLoading">
-      LOADING...
-      <font-awesome-icon class="loader" icon="spinner" />
-    </div>
-    <div v-else class="contents">
-      <Results />
-      <LoadMore />
-    </div>
+    <transition name="fade" mode="out-in">
+      <div v-if="isLoading" key="loading">
+        LOADING...
+        <font-awesome-icon class="loader" icon="spinner" />
+      </div>
+      <div v-else key="loaded" class="contents">
+        <Results />
+        <LoadMore />
+      </div>
+    </transition>
   </v-layout>
 </template>
 
@@ -56,5 +58,14 @@ export default {
 .contents,
 .results {
   width: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
