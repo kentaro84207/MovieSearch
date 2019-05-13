@@ -46,7 +46,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    '@nuxtjs/style-resources'
   ],
   /*
    ** Axios module configuration
@@ -94,12 +95,11 @@ export default {
    ** style-resources-module
    */
 
-  modules: ['@nuxtjs/style-resources'],
   styleResources: {
     scss: [
       './assets/style/foundation/_mixin.scss',
-      './assets/style/foundation/_variables.scss',
-      ]
+      './assets/style/foundation/_variables.scss'
+    ]
   },
 
   env: {
