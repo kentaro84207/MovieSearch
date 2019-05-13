@@ -4,6 +4,9 @@
   font-size: 20px;
   margin: 30px 0;
   padding-left: 50px;
+  @include media(sp) {
+    padding-left: 20px;
+  }
 }
 
 .heading__number {
