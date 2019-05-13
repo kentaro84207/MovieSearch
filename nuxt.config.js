@@ -90,6 +90,18 @@ export default {
     }
   },
 
+  /*
+   ** style-resources-module
+   */
+
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: [
+      './assets/style/foundation/_mixin.scss',
+      './assets/style/foundation/_variables.scss',
+      ]
+  },
+
   env: {
     API_KEY: 'ce191f672c06d990e9d4f40521ad4372'
   }
