@@ -1,0 +1,29 @@
+@include media(pc) {
+  .pc {
+    display: block;
+  }
+
+  .sp {
+    display: none;
+  }
+}
+
+@include media(tablet) {
+  .pc {
+    display: block;
+  }
+
+  .sp {
+    display: none;
+  }
+}
+
+@include media(sp) {
+  .sp {
+    display: block;
+  }
+
+  .pc {
+    display: none;
+  }
+}

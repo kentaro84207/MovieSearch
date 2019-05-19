@@ -1,25 +1,42 @@
 import axios from 'axios'
+import state from './state'
 
 const BASE_URL = 'https://api.themoviedb.org/3/'
 
 export default {
-  getData({ commit }, payload) {
+  async getData({ commit }) {
     commit('changeloadingState')
-    console.log(payload)
-    axios
-
-      .get(BASE_URL + payload.addUrl, {
-        params: payload.params
+    try {
+      const res = await axios.get(BASE_URL + state.url, {
+        params: state.params
       })
-      .then(response => {
-        commit('setItems', response.data)
+      commit('setItems', res.data)
+    } catch (e) {
+      console.error('error:', e)
+    }
+    commit('changeloadingState')
+  },
+  async addData({ commit }) {
+    try {
+      const res = await axios.get(BASE_URL + state.url, {
+        params: state.params
       })
-      .catch(e => {
-        console.error('error:', e)
-      })
-      .then(function() {
-        commit('changeloadingState')
-      })
+      commit('addItems', res.data)
+    } catch (e) {
+      console.error('error:', e)
+    }
+  },
+  changeUrl({ commit }, payload) {
+    commit('changeUrl', payload)
+  },
+  changeParams({ commit }, payload) {
+    commit('changeParams', payload)
+  },
+  addPage({ commit }) {
+    commit('addPageState')
+  },
+  resetPage({ commit }) {
+    commit('resetPageState')
   },
   changeDialog({ commit }) {
     commit('changeDialogState')

@@ -26,24 +26,35 @@
     </v-navigation-drawer>
     <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <nuxt-link to="/">
+        <h1 class="nav__heading">
+          <v-toolbar-title v-text="title" />
+        </h1>
+      </nuxt-link>
+      <Search />
       <v-spacer />
+      <figure class="nav__figure pc">
+        <img class="nav__image" src="logo.png" alt="THE MOVIE DB" />
+      </figure>
+      <h1 class="nav__figure sp">
+        <img class="nav__image" src="header-logo.png" alt="THE MOVIE DB" />
+      </h1>
     </v-toolbar>
     <v-content>
       <nuxt />
       <Modal />
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
+import Search from '~/components/Search.vue'
 import Modal from '~/components/Modal.vue'
 
 export default {
+  middleware: 'resetPage',
   components: {
+    Search,
     Modal
   },
   data() {
@@ -53,32 +64,44 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'apps',
-          title: 'Welcome',
+          icon: 'thumb_up_alt',
+          title: 'Popular',
           to: '/'
         },
         {
-          icon: 'thumb_up_alt',
-          title: 'Popular',
-          to: '/popular'
+          icon: 'star',
+          title: 'Top Rated',
+          to: '/top_rated'
+        },
+        {
+          icon: 'play_arrow',
+          title: 'Now Playing',
+          to: '/now_playing'
         }
       ],
       miniVariant: false,
       title: 'MovieSearch',
-      addUrl: 'movie/popular'
+      url: 'movie/popular'
     }
-  },
-  created: function() {
-    const params = {
-      api_key: process.env.API_KEY,
-      language: 'en-US',
-      page: 1
-    }
-    this.$store.dispatch('getData', {
-      addUrl: this.addUrl,
-      params: params
-    })
   }
 }
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.nav__heading {
+  @include media(sp) {
+    display: none;
+  }
+}
+
+.nav__figure {
+  width: 100px;
+  padding-top: 10px;
+  @include media(sp) {
+    width: 45px;
+  }
+}
+
+.nav__image {
+  width: 100%;
+}
+</style>

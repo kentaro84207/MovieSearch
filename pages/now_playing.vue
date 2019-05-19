@@ -19,8 +19,8 @@ export default {
   },
   data() {
     return {
-      title: 'Popular Movies',
-      url: 'movie/popular',
+      title: 'Now Playing Movies',
+      url: 'movie/now_playing',
       params: {
         api_key: process.env.API_KEY,
         language: 'en-US',

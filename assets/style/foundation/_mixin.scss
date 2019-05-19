@@ -6,7 +6,7 @@
 
 $breakpoints: (
   pc: 'only screen and (min-width: 992px)',
-  sp: 'only screen and (max-width: 991px)',
+  sp: 'only screen and (max-width: 767px)',
   tablet: 'only screen and (min-width: 768px) and (max-width: 991px)'
 );
 
@@ -14,4 +14,10 @@ $breakpoints: (
   @media #{map-get($breakpoints,$breakpoint)} {
     @content;
   }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
