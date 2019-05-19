@@ -11,9 +11,7 @@
         <figure v-if="item.poster_path !== null" class="results__image">
           <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" />
         </figure>
-        <figure v-else>
-          <img src="~/static/noImage.jpg" />
-        </figure>
+        <div v-else class="results__image -noimage">No Image</div>
         <h3 class="results__title">{{ item.title }}</h3>
       </li>
     </ul>
@@ -99,10 +97,17 @@ export default {
     @include media(tablet) {
       height: 58.6vw;
     }
+    @include media(sp) {
+      height: 58.6vw;
+    }
     img {
       width: 100%;
       height: 100%;
       transition: all 0.6s ease-out;
+    }
+    &.-noimage {
+      @include flex-center;
+      background-color: #e6e6e6;
     }
   }
   &__title {
