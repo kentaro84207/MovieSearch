@@ -9,8 +9,7 @@
           >
             <img
               :src="
-                'https://image.tmdb.org/t/p/original' +
-                  items[itemNum].backdrop_path
+                'https://image.tmdb.org/t/p/w780' + items[itemNum].backdrop_path
               "
             />
           </figure>
@@ -34,7 +33,7 @@
           <figure v-if="items[itemNum].poster_path !== null" class="pc">
             <img
               :src="
-                'https://image.tmdb.org/t/p/w500' + items[itemNum].poster_path
+                'https://image.tmdb.org/t/p/w342' + items[itemNum].poster_path
               "
             />
           </figure>
