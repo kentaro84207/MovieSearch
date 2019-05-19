@@ -36,9 +36,11 @@
       <figure class="nav__figure pc">
         <img class="nav__image" src="logo.png" alt="THE MOVIE DB" />
       </figure>
-      <h1 class="nav__figure sp">
-        <img class="nav__image" src="header-logo.png" alt="THE MOVIE DB" />
-      </h1>
+      <nuxt-link to="/">
+        <h1 class="nav__figure sp">
+          <img class="nav__image" src="header-logo.png" alt="THE MOVIE DB" />
+        </h1>
+      </nuxt-link>
     </v-toolbar>
     <v-content>
       <nuxt />
