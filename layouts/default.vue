@@ -27,13 +27,18 @@
     <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <nuxt-link to="/">
-        <v-toolbar-title v-text="title" />
+        <h1 class="nav__heading">
+          <v-toolbar-title v-text="title" />
+        </h1>
       </nuxt-link>
       <Search />
       <v-spacer />
-      <figure class="nav__figure">
+      <figure class="nav__figure pc">
         <img class="nav__image" src="logo.png" alt="THE MOVIE DB" />
       </figure>
+      <h1 class="nav__figure sp">
+        <img class="nav__image" src="header-logo.png" alt="THE MOVIE DB" />
+      </h1>
     </v-toolbar>
     <v-content>
       <nuxt />
@@ -82,9 +87,18 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.nav__heading {
+  @include media(sp) {
+    display: none;
+  }
+}
+
 .nav__figure {
   width: 100px;
   padding-top: 10px;
+  @include media(sp) {
+    width: 45px;
+  }
 }
 
 .nav__image {

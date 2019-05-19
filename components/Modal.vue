@@ -31,14 +31,10 @@
           <div class="modal__close" @click="changeDialog"></div>
         </div>
         <div class="modal__poster">
-          <figure
-            v-if="items[itemNum].poster_path !== null"
-            class="results__image"
-          >
+          <figure v-if="items[itemNum].poster_path !== null" class="pc">
             <img
               :src="
-                'https://image.tmdb.org/t/p/original' +
-                  items[itemNum].poster_path
+                'https://image.tmdb.org/t/p/w500' + items[itemNum].poster_path
               "
             />
           </figure>
@@ -85,6 +81,10 @@ export default {
     position: relative;
     height: 432px;
     background-color: #424242;
+    @include media(sp) {
+      height: auto;
+      background-color: #fff;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -94,6 +94,9 @@ export default {
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
+      @include media(sp) {
+        content: none;
+      }
     }
   }
   &__bg {
@@ -111,12 +114,33 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
+    color: $primary-color;
+    @include media(sp) {
+      width: 100%;
+      position: relative;
+      right: 0;
+    }
     &-main {
       font-size: 38px;
+      @include media(sp) {
+        font-size: 24px;
+        text-align: center;
+      }
     }
     &-date {
       margin-top: 20px;
+      color: #fff;
+      @include media(sp) {
+        font-size: 12px;
+        color: $font-color;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5px;
+        margin-right: 10px;
+        dt {
+          margin-right: 10px;
+        }
+      }
     }
   }
   &__close {
@@ -158,12 +182,19 @@ export default {
       width: 40%;
       margin-right: 30px;
       margin-left: auto;
+      @include media(sp) {
+        width: 90%;
+        margin-right: auto;
+      }
     }
     &-story {
       padding-top: 30px;
       padding-bottom: 30px;
       text-align: justify;
       line-height: 1.73;
+      @include media(sp) {
+        padding-top: 10px;
+      }
     }
   }
 }

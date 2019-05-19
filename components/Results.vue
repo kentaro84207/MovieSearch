@@ -61,24 +61,44 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     cursor: pointer;
+    @include media(sp) {
+      padding: 0 20px;
+    }
   }
   &__list {
-    width: 22%;
     margin-bottom: 50px;
+    @include media(pc) {
+      width: 22%;
+    }
+    @include media(tablet) {
+      width: 45%;
+    }
+    @include media(sp) {
+      width: 45%;
+    }
     &:not(:nth-of-type(4n)) {
-      margin-right: 4%;
+      @include media(pc) {
+        margin-right: 4%;
+      }
     }
     &:hover {
       img {
-        opacity: 0.6;
-        transform: scale(1.1);
+        @include media(pc) {
+          opacity: 0.6;
+          transform: scale(1.1);
+        }
       }
     }
   }
   &__image {
     width: 100%;
-    height: 24vw;
     overflow: hidden;
+    @include media(pc) {
+      height: 24vw;
+    }
+    @include media(tablet) {
+      height: 58.6vw;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -87,6 +107,10 @@ export default {
   }
   &__title {
     margin-top: 20px;
+    @include media(sp) {
+      margin-top: 10px;
+    }
+    font-weight: normal;
   }
 }
 </style>
