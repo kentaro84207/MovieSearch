@@ -1,6 +1,6 @@
 <template>
   <v-layout column justify-center align-center>
-    <h2 class="heading">Now Playing Movies</h2>
+    <h2 class="heading">{{ title }}</h2>
     <Contents />
   </v-layout>
 </template>
@@ -9,11 +9,17 @@
 import Contents from '~/components/Contents.vue'
 
 export default {
+  head() {
+    return {
+      title: this.title
+    }
+  },
   components: {
     Contents
   },
   data() {
     return {
+      title: 'Now Playing Movies',
       url: 'movie/now_playing',
       params: {
         api_key: process.env.API_KEY,
