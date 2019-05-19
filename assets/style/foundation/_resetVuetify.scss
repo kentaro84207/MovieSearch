@@ -11,3 +11,24 @@ aside {
     width: 200px !important;
   }
 }
+
+.v-dialog {
+  @include media(pc) {
+    margin: 0 !important;
+  }
+  @include media(tablet) {
+    margin: 0 !important;
+  }
+}
+
+.v-icon {
+  @include media(sp) {
+    font-size: 18px !important;
+  }
+}
+
+.v-rating {
+  @include media(sp) {
+    text-align: center;
+  }
+}

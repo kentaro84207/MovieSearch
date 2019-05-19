@@ -98,7 +98,8 @@ export default {
   styleResources: {
     scss: [
       './assets/style/foundation/_mixin.scss',
-      './assets/style/foundation/_variables.scss'
+      './assets/style/foundation/_variables.scss',
+      './assets/style/foundation/_base.scss'
     ]
   },
 
