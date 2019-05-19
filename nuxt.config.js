@@ -48,7 +48,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'nuxt-fontawesome',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-user-agent'
   ],
   /*
    ** Axios module configuration

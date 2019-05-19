@@ -60,8 +60,8 @@ export default {
   data() {
     return {
       clipped: true,
-      drawer: true,
       fixed: false,
+      drawer: this.$ua.isFromPc(),
       items: [
         {
           icon: 'thumb_up_alt',
