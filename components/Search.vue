@@ -40,5 +40,8 @@ export default {
 .search__input {
   padding-top: 25px;
   padding-left: 50px;
+  @include media(sp) {
+    padding-left: 0;
+  }
 }
 </style>

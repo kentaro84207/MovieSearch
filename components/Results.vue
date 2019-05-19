@@ -74,7 +74,7 @@ export default {
       width: 45%;
     }
     @include media(sp) {
-      width: 100%;
+      width: 45%;
     }
     &:not(:nth-of-type(4n)) {
       @include media(pc) {

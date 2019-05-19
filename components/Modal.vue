@@ -129,6 +129,7 @@ export default {
     }
     &-date {
       margin-top: 20px;
+      color: #fff;
       @include media(sp) {
         font-size: 12px;
         color: $font-color;

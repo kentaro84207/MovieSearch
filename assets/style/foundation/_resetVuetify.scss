@@ -21,6 +21,10 @@ aside {
   }
 }
 
+.v-toolbar__title {
+  color: $secondary-color;
+}
+
 .v-icon {
   @include media(sp) {
     font-size: 18px !important;
