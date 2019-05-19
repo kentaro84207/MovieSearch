@@ -8,6 +8,13 @@
 
 <script>
 export default {
-  props: ['error']
+  props: {
+    error: {
+      type: Object,
+      default: function() {
+        return { statusCode: 404, message: 'This page could not be found' }
+      }
+    }
+  }
 }
 </script>
