@@ -43,7 +43,7 @@ export default {
     commit('changeDialogLoadingState')
     setTimeout(() => {
       commit('changeDialogLoadingState')
-    }, 500)
+    }, 700)
   },
   changeItemNum({ commit }, payload) {
     commit('itemNumState', payload.itemNum)
