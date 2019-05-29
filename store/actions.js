@@ -38,12 +38,14 @@ export default {
   resetPage({ commit }) {
     commit('resetPageState')
   },
-  changeDialog({ commit }) {
+  changeDialog({ commit }, payload) {
     commit('changeDialogState')
-    commit('changeDialogLoadingState')
-    setTimeout(() => {
+    if (payload === 'open') {
       commit('changeDialogLoadingState')
-    }, 700)
+      setTimeout(() => {
+        commit('changeDialogLoadingState')
+      }, 700)
+    }
   },
   changeItemNum({ commit }, payload) {
     commit('itemNumState', payload.itemNum)

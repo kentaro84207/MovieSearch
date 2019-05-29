@@ -6,7 +6,7 @@
         v-cloak
         :key="index"
         class="results__list"
-        @click="changeDialog(), getItemNum(index)"
+        @click="changeDialog('open'), getItemNum(index)"
       >
         <figure v-if="item.poster_path !== null" class="results__image">
           <img :src="'https://image.tmdb.org/t/p/w342' + item.poster_path" />
@@ -26,15 +26,15 @@ export default {
     }
   },
   methods: {
-    changeDialog() {
-      this.$store.dispatch('changeDialog')
+    changeDialog(type) {
+      this.$store.dispatch('changeDialog', type)
       this.overlayClose()
     },
     overlayClose() {
       setTimeout(() => {
         const _overlay = document.querySelector('.v-overlay')
         _overlay.addEventListener('click', () => {
-          this.changeDialog()
+          this.changeDialog('close')
         })
       }, 500)
     },
