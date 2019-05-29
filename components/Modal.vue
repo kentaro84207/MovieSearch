@@ -37,7 +37,7 @@
                   <dd>{{ items[itemNum].release_date }}</dd>
                 </dl>
               </div>
-              <div class="modal__close" @click="changeDialog"></div>
+              <div class="modal__close" @click="changeDialog('close')"></div>
             </div>
             <div class="modal__poster">
               <figure v-if="items[itemNum].poster_path !== null" class="pc">
@@ -83,8 +83,8 @@ export default {
     }
   },
   methods: {
-    changeDialog() {
-      this.$store.dispatch('changeDialog')
+    changeDialog(type) {
+      this.$store.dispatch('changeDialog', type)
     }
   }
 }
