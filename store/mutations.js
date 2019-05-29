@@ -14,6 +14,9 @@ export default {
   changeloadingState(state) {
     state.loadingNow = !state.loadingNow
   },
+  changeDialogLoadingState(state) {
+    state.loadingDialog = !state.loadingDialog
+  },
   changeDialogState(state) {
     state.dialog = !state.dialog
   },
