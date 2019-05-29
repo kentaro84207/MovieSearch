@@ -2,48 +2,62 @@
   <v-layout row justify-center>
     <v-dialog v-model="dialog" max-width="768">
       <div v-if="dialog" class="modal">
-        <div class="modal__header">
-          <figure
-            v-if="items[itemNum].backdrop_path !== null"
-            class="modal__bg"
-          >
-            <img
-              :src="
-                'https://image.tmdb.org/t/p/original' +
-                  items[itemNum].backdrop_path
-              "
-            />
-          </figure>
-          <div class="modal__title">
-            <h3 class="modal__title-main">{{ items[itemNum].title }}</h3>
-            <v-rating
-              v-model="rating"
-              background-color="grey lighten-1"
-              color="yellow lighten-3"
-              readonly
-              half-increments
-            ></v-rating>
-            <dl class="modal__title-date">
-              <dt>Release date</dt>
-              <dd>{{ items[itemNum].release_date }}</dd>
-            </dl>
+        <transition name="fade" mode="out-in">
+          <div v-if="loadingDialog" key="loading">
+            <v-progress-linear
+              :indeterminate="true"
+              color="green"
+            ></v-progress-linear>
           </div>
-          <div class="modal__close" @click="changeDialog"></div>
-        </div>
-        <div class="modal__poster">
-          <figure v-if="items[itemNum].poster_path !== null" class="pc">
-            <img
-              :src="
-                'https://image.tmdb.org/t/p/w500' + items[itemNum].poster_path
-              "
-            />
-          </figure>
-        </div>
-        <div class="modal__contents">
-          <div class="modal__contents__inner">
-            <p class="modal__contents-story">{{ items[itemNum].overview }}</p>
+          <div v-else key="loaded">
+            <div class="modal__header">
+              <figure
+                v-if="items[itemNum].backdrop_path !== null"
+                class="modal__bg"
+              >
+                <img
+                  :src="
+                    'https://image.tmdb.org/t/p/w780' +
+                      items[itemNum].backdrop_path
+                  "
+                />
+              </figure>
+              <div v-else class="modal__bg -noimage">No Image</div>
+              <div class="modal__title">
+                <h3 class="modal__title-main">{{ items[itemNum].title }}</h3>
+                <v-rating
+                  v-model="rating"
+                  background-color="grey lighten-1"
+                  color="yellow lighten-3"
+                  readonly
+                  half-increments
+                ></v-rating>
+                <dl class="modal__title-date">
+                  <dt>Release date</dt>
+                  <dd>{{ items[itemNum].release_date }}</dd>
+                </dl>
+              </div>
+              <div class="modal__close" @click="changeDialog"></div>
+            </div>
+            <div class="modal__poster">
+              <figure v-if="items[itemNum].poster_path !== null" class="pc">
+                <img
+                  :src="
+                    'https://image.tmdb.org/t/p/w342' +
+                      items[itemNum].poster_path
+                  "
+                />
+              </figure>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents__inner">
+                <p class="modal__contents-story">
+                  {{ items[itemNum].overview }}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </transition>
       </div>
     </v-dialog>
   </v-layout>
@@ -63,6 +77,9 @@ export default {
     },
     rating() {
       return this.items[this.itemNum].vote_average / 2
+    },
+    loadingDialog() {
+      return this.$store.state.loadingDialog
     }
   },
   methods: {
@@ -102,6 +119,13 @@ export default {
   &__bg {
     width: 100%;
     height: 100%;
+    &.-noimage {
+      @include flex-center;
+      background-color: $bg-color;
+      @include media(sp) {
+        height: 180px;
+      }
+    }
   }
   &__title {
     width: 40%;
@@ -125,6 +149,7 @@ export default {
       @include media(sp) {
         font-size: 24px;
         text-align: center;
+        padding: 0 10px;
       }
     }
     &-date {

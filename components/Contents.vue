@@ -1,8 +1,7 @@
 <template>
   <transition name="fade" mode="out-in">
     <div v-if="isLoading" key="loading">
-      LOADING...
-      <font-awesome-icon class="loader" icon="spinner" />
+      <v-progress-circular indeterminate color="green"></v-progress-circular>
     </div>
     <div v-else key="loaded" class="contents">
       <Results />

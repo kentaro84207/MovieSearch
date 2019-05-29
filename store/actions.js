@@ -40,6 +40,10 @@ export default {
   },
   changeDialog({ commit }) {
     commit('changeDialogState')
+    commit('changeDialogLoadingState')
+    setTimeout(() => {
+      commit('changeDialogLoadingState')
+    }, 500)
   },
   changeItemNum({ commit }, payload) {
     commit('itemNumState', payload.itemNum)

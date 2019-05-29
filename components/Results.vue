@@ -9,7 +9,7 @@
         @click="changeDialog(), getItemNum(index)"
       >
         <figure v-if="item.poster_path !== null" class="results__image">
-          <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" />
+          <img :src="'https://image.tmdb.org/t/p/w342' + item.poster_path" />
         </figure>
         <div v-else class="results__image -noimage">No Image</div>
         <h3 class="results__title">{{ item.title }}</h3>
@@ -107,7 +107,7 @@ export default {
     }
     &.-noimage {
       @include flex-center;
-      background-color: #e6e6e6;
+      background-color: $bg-color;
     }
   }
   &__title {
