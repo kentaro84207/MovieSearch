@@ -1,7 +1,7 @@
 {
   "name": "MovieSearch",
   "version": "1.0.0",
-  "description": "My splendiferous Nuxt.js project",
+  "description": "Powered by The Movie Database",
   "author": "kentaro84207",
   "private": true,
   "scripts": {

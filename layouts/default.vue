@@ -23,6 +23,9 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+      <small class="nav__small">
+        This product uses the TMDb API but is not endorsed or certified by TMDb.
+      </small>
     </v-navigation-drawer>
     <v-toolbar :clipped-left="clipped" fixed app>
       <v-toolbar-side-icon @click="drawer = !drawer" />
@@ -105,5 +108,15 @@ export default {
 
 .nav__image {
   width: 100%;
+}
+
+.nav__small {
+  font-size: 10px;
+  display: inline-block;
+  padding: 0 20px;
+  text-align: justify;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
 }
 </style>
