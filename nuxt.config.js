@@ -29,7 +29,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://stupefied-kepler-1b9b33.netlify.com/header-logo.png'
+        content: 'https://stupefied-kepler-1b9b33.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
