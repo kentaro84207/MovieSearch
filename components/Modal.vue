@@ -22,6 +22,7 @@
                   "
                 />
               </figure>
+              <div v-else class="modal__bg -noimage">No Image</div>
               <div class="modal__title">
                 <h3 class="modal__title-main">{{ items[itemNum].title }}</h3>
                 <v-rating
@@ -118,6 +119,13 @@ export default {
   &__bg {
     width: 100%;
     height: 100%;
+    &.-noimage {
+      @include flex-center;
+      background-color: $bg-color;
+      @include media(sp) {
+        height: 180px;
+      }
+    }
   }
   &__title {
     width: 40%;
@@ -141,6 +149,7 @@ export default {
       @include media(sp) {
         font-size: 24px;
         text-align: center;
+        padding: 0 10px;
       }
     }
     &-date {
