@@ -9,7 +9,10 @@
         @click="changeDialog('open'), getItemNum(index)"
       >
         <figure v-if="item.poster_path !== null" class="results__image">
-          <img :src="'https://image.tmdb.org/t/p/w342' + item.poster_path" />
+          <img
+            :src="'https://image.tmdb.org/t/p/w342' + item.poster_path"
+            :alt="item.title"
+          />
         </figure>
         <div v-else class="results__image -noimage">No Image</div>
         <h3 class="results__title">{{ item.title }}</h3>
@@ -102,7 +105,7 @@ export default {
     }
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
       transition: all 0.6s ease-out;
     }
     &.-noimage {

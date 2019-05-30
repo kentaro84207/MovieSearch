@@ -20,6 +20,7 @@
                     'https://image.tmdb.org/t/p/w780' +
                       items[itemNum].backdrop_path
                   "
+                  :alt="items[itemNum].title"
                 />
               </figure>
               <div v-else class="modal__bg -noimage">No Image</div>
@@ -46,6 +47,7 @@
                     'https://image.tmdb.org/t/p/w342' +
                       items[itemNum].poster_path
                   "
+                  :alt="items[itemNum].title"
                 />
               </figure>
             </div>
